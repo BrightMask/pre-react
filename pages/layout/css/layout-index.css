@@ -1,0 +1,19 @@
+.cdot-full-page{
+    width: 100%;
+    height:100%;
+}
+.cdot-header{
+}
+.skin-menu{
+    float: right;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+}
+.overflow-content{
+    overflow: auto
+}
+.overflow-hidden-content{
+    overflow: hidden
+}

@@ -1,0 +1,14 @@
+.cdot-login-page{
+    width:300px;
+    margin: 0 auto;
+    margin-top: 15%;
+    padding: 0px 50px;
+    padding-top: 30px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    height: auto;
+}
+
+.login-btn{
+    width: 100%;
+}

@@ -1,0 +1,23 @@
+body{
+    width: 100%;
+    height: 100%;
+    font-family: '微软雅黑';
+    padding: 0px;
+    margin:0px;
+}
+#app{
+    width: 100%;
+    height:100%;
+}
+.ant-layout{
+    height: 100%
+}
+.cdot-full-page{
+    width: 100%;
+    height:100%;
+}
+/* 列表外部容器 */
+.cdot-list-content{
+    margin: 0px 15px 15px 15px;
+    background-color: #fff;
+}
