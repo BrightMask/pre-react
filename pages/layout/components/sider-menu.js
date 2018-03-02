@@ -25,19 +25,19 @@ class SiderMenu extends React.Component{
                             <Link to="/company">公司管理</Link>
                         </Menu.Item>
                         <Menu.Item>
-                            <Link to="/manage">站点管理</Link>
+                            <Link to="/home">站点管理</Link>
                         </Menu.Item>
                         <Menu.Item>
                             <Link to="/manage">设备管理</Link>
                         </Menu.Item>
                     </SubMenu>
                     <Menu.Item>
-                        <Link to="/settheme">
+                        <Link to="/company">
                             监控中心
                         </Link>
                     </Menu.Item>
                     <Menu.Item>
-                        <Link to="/finance">
+                        <Link to="/main/settheme">
                             财务中心
                         </Link>
                     </Menu.Item>

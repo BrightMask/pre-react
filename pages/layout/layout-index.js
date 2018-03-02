@@ -5,13 +5,26 @@ import SkinImg from './img/skin-peeler.png';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom'
 import './css/layout-index.css'
 import routeMap from '../../router/routerMap'
 import PageNameNav from './components/page-name-nav'
+import MapLayout from '../map/map-layout'
+import CompanyList from '../companys/components/list'
 
 const {Header, Sider, Content } = Layout;
+
+const RouteWithSubRoutes = (route) => (
+    <Route
+        path={route.path}
+        render = {props => (
+            <route.main {...props} routes={route.routes} />
+        )}
+    />
+
+)
 
 class PageLayout extends React.Component {
     render () {
@@ -29,16 +42,17 @@ class PageLayout extends React.Component {
                         </Header>
                         <Content className="overflow-content">
                             <PageNameNav />
-                            {
-                                routeMap.map((route,index) => (
-                                    <Route
-                                        key={index}
-                                        path={route.path}
-                                        exact={route.exact}
-                                        component={route.main}
-                                    />
-                                ))
-                            }
+                            <Switch>
+                                {
+                                    routeMap.map((route,index) => (
+                                        <Route
+                                            key={index}
+                                            path={route.path}
+                                            component={route.main}
+                                        />
+                                    ))
+                                }
+                            </Switch>
                         </Content>
                     </Layout>
                 </Layout>
