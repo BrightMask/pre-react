@@ -37,13 +37,18 @@ class SiderMenu extends React.Component{
                         </Link>
                     </Menu.Item>
                     <Menu.Item>
-                        <Link to="/main/settheme">
+                        <Link to="/settheme">
                             财务中心
                         </Link>
                     </Menu.Item>
                     <Menu.Item>
                         <Link to="/system">
                             系统设置
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Link to="/increment">
+                            增值服务
                         </Link>
                     </Menu.Item>
                 </Menu>

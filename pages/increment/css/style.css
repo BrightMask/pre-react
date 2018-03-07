@@ -1,0 +1,10 @@
+.increment-container{
+    width: 100%;
+    height: 100%;
+}
+.increment-item{
+    height: 80px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius:5px;
+}

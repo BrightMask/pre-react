@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {
+    BrowserRouter,
     Route,
     Link,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom'
 import LoginReactRedux from './pages/login/redux/loginReactRedux'
 import HomePage from './pages/homepage/index'
@@ -15,21 +17,10 @@ class App extends Component {
     render () {
         return (
             <div className="cdot-full-page">
-                {/* <LayoutPage>
-                    <Switch>
-                        {
-                            routeMap.map((route,index) => (
-                                <Route
-                                    key={index}
-                                    path={route.path}
-                                    component={route.main}
-                                />
-                            ))
-                        }
-                    </Switch>
-                </LayoutPage> */}
-                <Route path="/login" component={LoginReactRedux} />
-                <Route exact path="/layout" component={LayoutPage} />
+                <Switch>
+                    <Route path="/login" exact component={LoginReactRedux}/>
+                    <Route path="/" component={LayoutPage}/>
+                </Switch>
             </div>
         )
     }

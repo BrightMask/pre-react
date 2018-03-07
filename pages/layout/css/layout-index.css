@@ -12,7 +12,8 @@
     margin-top: 15px;
 }
 .overflow-content{
-    overflow: auto
+    overflow: hidden;
+    position: relative;
 }
 .overflow-hidden-content{
     overflow: hidden

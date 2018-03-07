@@ -32,7 +32,7 @@ function mapDispatchToProps(dispatch) {
                 }).then(function (datas) {
                     console.log(datas)
                 })
-                history.push("/layout")
+                history.push("/")
             },1000)
         }
     }
