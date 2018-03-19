@@ -10,7 +10,6 @@ class LoginForm extends React.Component {
         console.log(this)
         this.props.form.validateFields((err,values) => {
             if(!err) {
-
                 this.props.GOLOGIN(values.userName,values.password,this.props.history)
             }
         })

@@ -12,7 +12,6 @@ import LayoutPage from './pages/layout/layout-index'
 import MapLayout from './pages/map/map-layout'
 import  './common/css/common.css'
 import routeMap from './router/routerMap'
-import CompanyList from './pages/companys/components/list'
 class App extends Component {
     render () {
         return (

@@ -12,8 +12,8 @@ import './css/layout-index.css'
 import routeMap from '../../router/routerMap'
 import PageNameNav from './components/page-name-nav'
 import MapLayout from '../map/map-layout'
-import CompanyList from '../companys/components/list'
 import HomePage from '../homepage/index'
+import UserCorner from './components/usercorner'
 
 const {Header, Sider, Content } = Layout;
 
@@ -28,9 +28,10 @@ class LayoutPage extends React.Component {
                     </Sider>
                     <Layout className="overflow-hidden-content">
                         <Header className="cdot-header">
-                            <Link to="/login">
+                            <UserCorner />
+                            {/* <Link to="/login">
                                 <img src={SkinImg} className='skin-menu'></img>
-                            </Link>
+                            </Link> */}
                         </Header>
                         <Content className="overflow-content">
                             <PageNameNav />

@@ -1,39 +1,35 @@
 import { connect } from 'react-redux'
-import CompanyList from './components/list'
 import React, { Component } from 'react'
-import CompanyList from '../components/list'
+// import actions from '../actions/companyAcitons'
+import CompanyList from '../components/companyList'
+import { searching } from '../actions/companyAcitons'
+
 
 class CompanyContainer extends Component {
+
+
     render () {
-        let { state } = this.props;
-
-        let mockState = {
-            companys:[
-                {
-                    id:1,
-                    name:'测试一',
-                    type:'运营商'
-                },{
-                    id:2,
-                    name:'测试二',
-                    type:'运营商'
-                },{
-                    id:3,
-                    name:'测试三',
-                    type:'运营商'
-                }
-
-            ]
-        }
-        state = mockState
-
-
         return (
-            <div class="component-container">
-                
+            <div className="page-container component-container">
+                {/* <CompanyList /> */}
             </div>
         )
     }
 }
 
-export default connect()(CompanyContainer)
+
+// const mapStateToProps = state => {
+//     return {
+//         list:state.company.list,
+//         loading:state.company.loading
+//     }
+// }
+//
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         searching:condition => dispatch(searching(condition))
+//     }
+// }
+
+export default CompanyContainer
+// = connect(mapStateToProps)(CompanyContainer)

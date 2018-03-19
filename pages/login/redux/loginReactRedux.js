@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch) {
                 formData.append('pwd',password)
                 formData.append('nologin',999)
 
-                fetch('http://dev.chargedot.com:18973/api/v1/system/user/login',{
+                fetch('http://dev.chargedot.com:18972/api/v1/system/user/login',{
                     method:'POST',
                     mode:'no-cors',
                     body:formData

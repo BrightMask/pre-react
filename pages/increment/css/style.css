@@ -2,9 +2,43 @@
     width: 100%;
     height: 100%;
 }
+.increment-general-info{
+    margin-bottom: 15px;
+    float: right;
+}
+
 .increment-item{
-    height: 80px;
     width: 100%;
     border: 1px solid #ddd;
     border-radius:5px;
+    padding: 0px 10px;
+}
+.increment-header{
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+}
+.increment-name{
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+.increment-btn-group{
+    height: 40px;
+    float: right;
+}
+.increment-btn{
+    float: right;
+}
+.increment-price{
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    width:100%;
+}
+.choosen-increment-list{
+    margin-bottom: 15px;
 }

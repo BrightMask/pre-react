@@ -9,35 +9,39 @@ class IncrementItem extends Component {
 
     render () {
         let { state, actions } = this.props
-
-        let mockState = {
-            id:1,
-            name:'充值管理',
-            price:8000,
-            isChoosen:false
-        }
-
-        let mockActions = {
-            chooseIncerment:id => consloe.log('chooseIncerment',id)
-        }
-
-        state = mockState;
-        actions =mockActions
-
-        if(state.isChoosen) return null
-
+        console.log(state)
         return (
-        <Col span={6}>
-                <div  className="increment-item">
+            <div  className="increment-item">
+                <div className="increment-header">
+
                     <div className="increment-name">
                         {state.name}
                     </div>
-                    <div className="increment-btn"></div>
-                    <div className="increment-price">
-                        {state.price}
-                    </div>
+                    <div className="increment-btn-group">
+                        {
+                            state.isChoosen?
+                            <Button
+                                disabled
+                                size="small"
+                            >
+                                已购买
+                            </Button>:
+                            <Button
+                                type="primary"
+                                size="small"
+                                className=""
+                                onClick={()=>dispatch(actions.buyIncrement)}
+                            >
+                                购买
+                            </Button>
+
+                        }
+                        </div>
                 </div>
-            </Col>
+                <div className="increment-price">
+                    ￥{state.price}
+                </div>
+            </div>
         )
     }
 }

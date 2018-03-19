@@ -16,16 +16,16 @@ class SiderMenu extends React.Component{
                     mode="inline"
                 >
                     <Menu.Item>
-                        <Link to="/map">
+                        <Link to="/login">
                             地图中心
                         </Link>
                     </Menu.Item>
                     <SubMenu  title={<span>管理中心</span>}>
                         <Menu.Item>
-                            <Link to="/company">公司管理</Link>
+                            <Link to="/company/list">公司管理</Link>
                         </Menu.Item>
                         <Menu.Item>
-                            <Link to="/home">站点管理</Link>
+                            <Link to="/company">公司Container</Link>
                         </Menu.Item>
                         <Menu.Item>
                             <Link to="/manage">设备管理</Link>
@@ -49,6 +49,11 @@ class SiderMenu extends React.Component{
                     <Menu.Item>
                         <Link to="/increment">
                             增值服务
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Link to="/system">
+                            系统用户
                         </Link>
                     </Menu.Item>
                 </Menu>
