@@ -1,4 +1,4 @@
-import { SEARCH_LIST, FINISH_SEARCH,START_SEARCH } from '../actions/companyAcitons'
+import { SEARCH_LIST, GET_RESPONSE,START_REQUEST, SHOW_LIST, ADD_COMPANY } from '../actions/companyAcitons'
 
 let initialState = {
     moduleName:'company',
@@ -6,20 +6,30 @@ let initialState = {
     list:[],
     loading:false,
     isRequest:false,
-    requestFinished:false
+    requestFinished:false,
 }
 
 
 export default (state = initialState,action) =>{
     switch (action.type) {
-        case START_SEARCH:
+        case START_REQUEST:
+        return Object.assign({},state,{
+            loading:action.loading
+        })
+
+        case GET_RESPONSE:
+        return  Object.assign({},state,{
+            loading:action.loading
+        })
+
+        case SHOW_LIST:
             return Object.assign({},state,{
-                loading:true
+                list:action.payload
             })
-        case FINISH_SEARCH:
-            return Object.assign({},state,{
-                loading:false,
-                list:payload
+
+        case ADD_COMPANY:
+            return Object.assign({}, state, {
+
             })
         default:
             return state

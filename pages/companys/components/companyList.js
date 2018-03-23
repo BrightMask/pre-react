@@ -1,38 +1,47 @@
 import React,{ Component } from 'react'
-import { Table, Button } from 'antd'
+import { Button } from 'antd'
+import { connect } from 'react-redux'
 const PropTypes = require('prop-types');
 import PageFilterContainer from '../../../common/containers/page-fliter-container'
 import PageConfig from '../componetConfig'
-import {withRouter,hashHistory  } from 'react-router'
+import PageList from '../../../common/components/list'
+import { searching } from '../actions/companyAcitons'
+import {withRouter} from "react-router-dom";
 
-const columns = PageConfig.listColumns
 
 class CompanyList extends Component {
-
     constructor(props){
-         super(props)
+        super(props)
+    }
+    componentDidMount() {
+        console.log(this.props)
+        const { dispatch } = this.props
+        dispatch(searching())
     }
 
-    ToAdd(event){
-        event.preventDefault()
-        let path = '/company/add'
-        hashHistory.push(path);
+
+    routerAdd(){
+        this.props.history.push("/company/add");
+    }
+
+    routerEdit(){
+        this.props.history.push("/company/edit")
     }
 
     render () {
+        const { list,history } = this.props
         return (
-            <div className="cdot-list-content">
-                <Table   bordered columns={columns} />
-                <div className="page-operation-btn">
-                    <Button type="primary" onClick={this.ToAdd}>
-                        添加
-                        {/* <Redirect to="/company/add" /> */}
-                    </Button>
-                </div>
+            <div className="list-page-container">
+                <PageFilterContainer filters={PageConfig.filterConfig}/>
+                <PageList pageConfig={PageConfig} data={list}/>
+                <Button onClick={this.routerAdd.bind(this)}>添加公司</Button>
             </div>
         )
     }
 }
-
-
-export default withRouter(CompanyList)
+const mapStateToProps = state => {
+    return {
+        ...state.company
+    }
+}
+export default connect(mapStateToProps)(CompanyList)

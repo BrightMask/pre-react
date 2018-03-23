@@ -1,12 +1,29 @@
 import React, { Component } from 'react'
 import { Form, Input, Button, Row, Col, Select } from 'antd'
 import CompanyConfig from '../componetConfig'
+import { connect } from 'react-redux'
+import '../css/style.css'
+import { add } from '../actions/companyAcitons'
 
 const Option = Select.Option
 const FormItem = Form.Item
 const formGroup = CompanyConfig.addConfig
 
 class AddCompany extends Component {
+    constructor(props){
+        super(props)
+    }
+
+
+    handleAdd = e => {
+        const { dispatch } = this.props
+        e.preventDefault()
+        this.props.form .validateFieldsAndScroll((err,value) => {
+            if(!err) {
+                dispatch(add(value))
+            }
+        })
+    }
 
 
 
@@ -31,7 +48,10 @@ class AddCompany extends Component {
                 xxl:{span:12}
             }
         }
+
+
         return (
+
             <Form className="add-form">
                 <Row>
                     {
@@ -52,7 +72,6 @@ class AddCompany extends Component {
                                         label={item.name}
                                     >
                                             {getFieldDecorator(item.key,{
-
                                             })(
                                                 <Input placeholder={item.placeholder}/>
                                             )}
@@ -73,16 +92,24 @@ class AddCompany extends Component {
                             </Col>
                         ))
                     }
-
+{/*
                     <FormItem
                         wrapperCol={{span:12,offset:4}}
                     >
                         <Button type="primary">确认</Button>
-                    </FormItem>
+                    </FormItem> */}
+                </Row>
+                <Row>
+                    <Button type="primary" onClick={this.handleAdd.bind(this)}>确认</Button>
                 </Row>
             </Form>
 
         )
     }
 }
-export default AddCompany = Form.create()(AddCompany)
+const mapStateToProps = state => {
+    return {
+        ...state.company
+    }
+}
+export default connect(mapStateToProps)(Form.create()(AddCompany))

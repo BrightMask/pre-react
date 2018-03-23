@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^3.2.0",
+    "js-base64": "^2.4.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-loadable": "^5.3.1",
@@ -34,6 +35,7 @@
     "file-loader": "^1.1.9",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "md5": "^2.2.1",
     "prop-types": "^15.6.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",

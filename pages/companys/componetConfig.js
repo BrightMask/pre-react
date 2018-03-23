@@ -1,6 +1,7 @@
 let CompanyConfig =  {
     // 模块名称
     name:'公司管理',
+    moduleType:'company',
     // 添加表单添加项
     addConfig:[
         {
@@ -146,7 +147,7 @@ let CompanyConfig =  {
         {
             filter_name:'所在城市',
             filter_key:'query_code',
-            filter_type: 'write_select'
+            filter_type: 'cascader'
         },
         {
             filter_name:'所在城市',
@@ -173,8 +174,11 @@ let CompanyConfig =  {
     listColumns:[
         {
             title:'序号',
-            dataIndex:'',
-            key:'index'
+            dataIndex:'index',
+            key:'index',
+            render: (index) => {
+			    return index + 1
+		    },
         },
 
         {

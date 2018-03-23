@@ -1,4 +1,7 @@
 import axios from 'axios'
+import { Base64 } from 'js-base64';
+const md5 = require('md5');
+
 
 // 基础接口路径
 axios.defaults.baseURL = 'http://dev.chargedot.com:18972/api/v1'
@@ -14,10 +17,20 @@ const source = CancelToken.source();
 
 // 请求拦截器
 axios.interceptors.request.use (config => {
+    let nowtime = Date.parse(new Date())
+    let key = 'NzI3ZTkxODIuxzUABCDEZXTlOTc8lPR5'
+    let sign = md5('anyo' + nowtime + key)
+    let name = 'anyo'
+    let authorization = name + ':' + sign
+    authorization = Base64.encode(authorization);
+    authorization = 'Basic ' + authorization;
+
     // 判断如果为开发测试环境
     if(config.baseURL == 'http://dev.chargedot.com:18972/api/v1'){
         config.data.nologin = 999
     }
+    config.headers.r = nowtime;
+    config.headers.Authorization = authorization
     return config
 }, error => {
     return Promise.reject (error)
@@ -75,13 +88,21 @@ export default {
             })
         })
     },
+    noStringifySearch(url,params){
+        return new Promise((resolve,reject) => {
+            axios.post(url,params).then(res => {
+                resolve(res)
+            }).catch(err => {
+                reject(err)
+            })
+        })
+    },
     search(url,params){
         return new Promise((resolve,reject) => {
-            axios.post({
-                url:url+'/search',
+            axios.post(url,{
                 data:JSON.stringify(params)
             }).then(res => {
-                reslove(res.data)
+                resolve(res)
             }).catch(err => {
                 reject(err)
             })

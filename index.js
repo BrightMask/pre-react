@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter , Route, hashHistory,Switch} from 'react-router-dom';
+import { BrowserRouter as Router , Route, hashHistory,Switch} from 'react-router-dom';
 // import registerServiceWorker from './registerServiceWorker';
 
 import { createStore,applyMiddleware } from 'redux';
@@ -33,9 +33,9 @@ const store = createStore(
 ReactDOM.render(
     <div className="cdot-full-page">
         <Provider store={store}>
-            <BrowserRouter >
+            <Router>
                 <Route path="/" component={App}/>
-            </BrowserRouter>
+            </Router>
         </Provider>
     </div>,
     document.getElementById('app')

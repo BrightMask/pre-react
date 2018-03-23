@@ -25,12 +25,10 @@ function mapDispatchToProps(dispatch) {
                     body:formData
                 }).then(
                 function (res) {
-                    console.log(res)
                 }
                 ).then(function (json) {
 
                 }).then(function (datas) {
-                    console.log(datas)
                 })
                 history.push("/")
             },1000)

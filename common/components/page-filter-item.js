@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 import { Form, Col, Select, Input } from 'antd'
+import { Cascader } from 'antd'
 import '../css/common.css'
 
 const Option = Select.Option
 const FormItem = Form.Item
 
-
 class PageFilterItem extends Component {
-
-
-    shouldComponentUpdate(nextProps) {
-        return nextProps.state != this.props.state
+    constructor(props){
+        super(props)
+    }
+    // shouldComponentUpdate(nextProps) {
+    //     return nextProps.state != this.props.state
+    // }
+    onChange(value){
     }
 
     render () {
-        console.log(this.props)
-        let { state } = this.props
+        let { state,filter } = this.props
         const { getFieldDecorator } = this.props.form
         const formItemLayout = {
             labelCol:{
@@ -31,31 +33,32 @@ class PageFilterItem extends Component {
                 lg:{span:16}
             }
         }
-
-
-
         return (
-
             <FormItem
                 {...formItemLayout}
                 label={state.filter_name}
-                 className="each-page-filter"
+                className="each-page-filter"
             >
                 {
                     state.filter_type == 'write_select'?
                     getFieldDecorator(state.filter_key,{
                     })(
-                        <Select size="small" mode="tags" style={{width:'100%'}}></Select>
+                        <Select mode="tags" style={{width:'100%'}} placeholder={state.filter_palceholder}></Select>
                     ):
                     state.filter_type == 'select'?
                     getFieldDecorator(state.filter_key,{
                     })(
-                        <Select size="small" style={{width:'100%'}}></Select>
+                        <Select style={{width:'100%'}} placeholder={state.filter_palceholder}></Select>
                     ):
                     state.filter_type == 'write'?
                     getFieldDecorator(state.filter_key,{
                     })(
-                        <Input size="small"/>
+                        <Input placeholder={state.filter_palceholder}/>
+                    ):
+                    state.filter_type == 'cascader'?
+                    getFieldDecorator(state.filter_key,{
+                    })(
+                        <Cascader/>
                     ):''
                 }
             </FormItem>

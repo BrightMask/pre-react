@@ -6,8 +6,6 @@ import './css/style.css'
 class LoginForm extends React.Component {
     // 登录
     goLogin(e){
-        console.log(e)
-        console.log(this)
         this.props.form.validateFields((err,values) => {
             if(!err) {
                 this.props.GOLOGIN(values.userName,values.password,this.props.history)
@@ -16,8 +14,6 @@ class LoginForm extends React.Component {
     }
 
     componentDidMount() {
-        console.log('Login渲染完毕！')
-
     }
 
     render () {
