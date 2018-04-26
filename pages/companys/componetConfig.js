@@ -128,30 +128,31 @@ let CompanyConfig =  {
     filterConfig:[
         {
             filter_name:'公司',
-            filter_palceholder:'公司名称',
+            filter_placeholder:'公司名称',
             filter_key:'enterprise_id',
             filter_type: 'write_select'
         },
         {
             filter_name:'公司编码',
-            filter_palceholder:'公司编码',
+            filter_placeholder:'公司编码',
             filter_key:'query_code',
             filter_type: 'write'
         },
         {
             filter_name:'上级公司',
-            filter_palceholder:'上级公司',
+            filter_placeholder:'上级公司',
             filter_key:'query_code',
             filter_type: 'write_select'
         },
         {
             filter_name:'所在城市',
             filter_key:'query_code',
-            filter_type: 'cascader'
+            filter_type: 'cascader',
+            filter_placeholder:'请选择所在城市'
         },
         {
             filter_name:'所在城市',
-            filter_palceholder:'公司等级',
+            filter_placeholder:'公司等级',
             filter_key:'公司等级',
             filter_type: 'select',
             selet_options:[
@@ -172,14 +173,14 @@ let CompanyConfig =  {
     ],
     // 列表内容
     listColumns:[
-        {
-            title:'序号',
-            dataIndex:'index',
-            key:'index',
-            render: (index) => {
-			    return index + 1
-		    },
-        },
+        // {
+        //     title:'序号',
+        //     dataIndex:'index',
+        //     key:'index',
+        //     render: (index) => {
+		// 	    return index + 1
+		//     },
+        // },
 
         {
             title:'公司名称',

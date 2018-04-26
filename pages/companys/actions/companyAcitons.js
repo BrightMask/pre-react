@@ -35,7 +35,6 @@ export const add_company = data => ({
     payload:data
 })
 
-
 // 搜索查询列表
 export const searching = condition => (dispatch,getState) => {
     dispatch(start_request())
@@ -57,7 +56,7 @@ export const add = condition => (dispatch, getState) => {
 }
 
 // 删除公司
-export const delete = condition => (dispatch, getState) => {
+export const remove = condition => (dispatch, getState) => {
     dispatch(start_request())
     return Service.search('/station/enterprise/delete',condition)
         .then(function(data){

@@ -10,7 +10,6 @@ import {
 } from 'react-router-dom'
 import './css/layout-index.css'
 import routeMap from '../../router/routerMap'
-import PageNameNav from './components/page-name-nav'
 import MapLayout from '../map/map-layout'
 import HomePage from '../homepage/index'
 import UserCorner from './components/usercorner'
@@ -34,7 +33,6 @@ class LayoutPage extends React.Component {
                             </Link> */}
                         </Header>
                         <Content className="overflow-content">
-                            <PageNameNav />
                             {
                                 routeMap.map((route,index) => (
                                     <Route

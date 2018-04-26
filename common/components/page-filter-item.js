@@ -43,22 +43,22 @@ class PageFilterItem extends Component {
                     state.filter_type == 'write_select'?
                     getFieldDecorator(state.filter_key,{
                     })(
-                        <Select mode="tags" style={{width:'100%'}} placeholder={state.filter_palceholder}></Select>
+                        <Select mode="tags" style={{width:'100%'}} placeholder={state.filter_placeholder}></Select>
                     ):
                     state.filter_type == 'select'?
                     getFieldDecorator(state.filter_key,{
                     })(
-                        <Select style={{width:'100%'}} placeholder={state.filter_palceholder}></Select>
+                        <Select style={{width:'100%'}} placeholder={state.filter_placeholder}></Select>
                     ):
                     state.filter_type == 'write'?
                     getFieldDecorator(state.filter_key,{
                     })(
-                        <Input placeholder={state.filter_palceholder}/>
+                        <Input placeholder={state.filter_placeholder}/>
                     ):
                     state.filter_type == 'cascader'?
                     getFieldDecorator(state.filter_key,{
                     })(
-                        <Cascader/>
+                        <Cascader options={filter.areaData} placeholder={state.filter_placeholder}/>
                     ):''
                 }
             </FormItem>

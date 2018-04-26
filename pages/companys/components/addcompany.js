@@ -109,7 +109,7 @@ class AddCompany extends Component {
 }
 const mapStateToProps = state => {
     return {
-        ...state.company
+        ...state.companyDetail
     }
 }
 export default connect(mapStateToProps)(Form.create()(AddCompany))

@@ -4,16 +4,16 @@ import { connect } from 'react-redux'
 import PageFilterItem from '../components/page-filter-item'
 import { searchArea } from '../actions/filterActions'
 
+const FormItem = Form.Item
 
 
-class PageFilterContainer extends Component {
+class PageFilter extends Component {
     constructor(props){
         super(props)
     }
-
     componentDidMount(){
         let condition = {
-            type: "province",
+            type: "getAreaInfo",
             parents: ""
         }
         const { dispatch } = this.props
@@ -31,27 +31,33 @@ class PageFilterContainer extends Component {
         })
         return data
     }
-    searchList() {
 
+    searchList = (e) => {
+        e.preventDefault();
+        this.props.form.validateFields(( err, values ) => {
+            if(!err) {
+                console.log(values)
+            }
+        })
     }
-
 
     render () {
         let { filters,filter } = this.props
         return (
             <div className="page-filter-container-box">
-                <Form>
+                <Form onSubmit={this.searchList}>
                     <Row gutter={16}>
                         {this.setFilter(filters,filter)}
-                    </Row>
-                    {
-                        filters?
-                        <Row>
-                            <Col span={1} offset={21}>
-                                <Button type="primary" size="default">查询</Button>
+                        {
+                            filters?
+                            <Col span={1}>
+                                <FormItem>
+                                    <Button htmltype="submit" type="primary" size="default">查询</Button>
+                                </FormItem>
                             </Col>
-                        </Row>:null
-                    }
+                            :null
+                        }
+                    </Row>
                 </Form>
             </div>
         )
@@ -63,7 +69,7 @@ const mapStateToProps = state => ({
     filter:state.filter
 })
 
-
+const PageFilterContainer = Form.create()(PageFilter)
 
 export default connect (mapStateToProps)(PageFilterContainer)
 // export default PageFilterContainer

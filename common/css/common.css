@@ -71,3 +71,7 @@ body{
 .cdot-table{
     background-color: #fff;
 }
+.cdot-list-container{
+    background-color: #fff;
+    padding:10px 10px;
+}

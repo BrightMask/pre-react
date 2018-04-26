@@ -8,6 +8,7 @@ import IncrementContainer from '../pages/increment/container/incrementContainer'
 import CompanyContainer from '../pages/companys/containers/companyContainer'
 import AddCompany from '../pages/companys/components/addcompany'
 import SystemUserContainer from '../pages/systemUser/containers/systemUserContainer'
+import SystemTheme from '../common/system-theme/components/cdot-system-theme-set'
 
 
 const routeMap = [

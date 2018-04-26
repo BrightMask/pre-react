@@ -16,7 +16,7 @@ class SiderMenu extends React.Component{
                     mode="inline"
                 >
                     <Menu.Item>
-                        <Link to="/login">
+                        <Link to="/map">
                             地图中心
                         </Link>
                     </Menu.Item>
