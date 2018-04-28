@@ -4,6 +4,7 @@
     right: 0;
     top: 0;
     bottom: 0;
+    padding: 20px;
     background-color: #ccc;
 }
 .cdot-map-row{
@@ -12,6 +13,9 @@
 .cdot-map-left{
     background-color: #ddd;
     height: 100%;
+    display: flex;
+    flex-direction: column ;
+    justify-content:center;
 }
 .cdot-map-center{
     background-color: #fff;
@@ -20,15 +24,33 @@
 .cdot-map-right{
     background-color: #f0f0f0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-
 /* center */
 .system-total-data-box{
     width:100%;
     height: 200px;
     background-color: #f9f9f9;
+
 }
 .cdot-map-box{
 
+}
+/* left */
+.left-chart-item{
+    width: 100%;
+    background-color: #ffffff;
+    flex:1;
+    margin: 5px 0px;
+
+}
+
+/* right */
+.right-chart-item{
+    width: 100%;
+    background-color: #fff;
+    flex:1;
+    margin: 5px 0px;
 }
